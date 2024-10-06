@@ -15,5 +15,5 @@ title: Welcome! 欢迎！
 
 ## 你可以……
 - 阅读[我的博客](/blog)
-- 利用RSS订阅我的博客。点击[此处](subscibe-rss)了解如何订阅
+- 利用RSS订阅我的博客。点击[此处](subscribe-rss)了解如何订阅
 - 在[此页](about)了解我的一些信息
