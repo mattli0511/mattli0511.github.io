@@ -7,7 +7,7 @@ title: 如何订阅RSS
 ---
 ## 在订阅RSS前，需要以下准备工作：
 - 一个RSS阅读器，建议在网上搜索相关内容，或者在一些应用商城里搜索。
-- RSS订阅源，可复制[这个链接](https://mattli0511.github.io/feed.xml)的地址来订阅本网站。
+- RSS订阅源，可复制[这个链接](https://mattli0511.github.io/feed.xml)或网页上端按钮的地址来订阅本网站。
 
 ## 开干！
 1. 首先，打开你的RSS阅读器
