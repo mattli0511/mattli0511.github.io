@@ -5,7 +5,7 @@
 layout: default
 title: Welcome! 欢迎！
 ---
-我是Matt Li，一个喜欢瞎鼓捣的人~
+# 我是Matt Li，一个喜欢瞎鼓捣的人~
 
 ## 你可以在我的博客里找到……
 - 我的一些碎碎念

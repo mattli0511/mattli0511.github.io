@@ -4,7 +4,9 @@ title:  "关于GitHub Pages的一些碎碎念"
 date:   2024-10-04 15:20:30 +0800
 author: Matt Li
 categories: chat
-tag: GitHub Pages
+tag: 
+- GitHub Pages
+- 网页
 ---
 
 众所周知，我是一个比较喜欢捯饬东西的人，装虚拟机啊、弄电子书啊、创建网站什么的，我都干过。当然，其中很多质量也不高。
