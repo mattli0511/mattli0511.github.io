@@ -3,7 +3,9 @@ layout: post
 title:  "关于GitHub Pages的一些碎碎念"
 date:   2024-10-04 15:20:30 +0800
 author: Matt Li
-categories: chat
+categories: 
+- chat
+- note
 tag: 
 - GitHub Pages
 - 网页

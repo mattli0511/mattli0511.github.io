@@ -25,6 +25,7 @@ title: 博文列表
       <div class="grid grid-cols-1 gap-6">
       {%- assign date_format = "%Y-%m-%d" -%}
       {%- for post in posts -%}
+        {%- if post.categories contains 'note' -%}
         <article class="glassmorphism p-6 card-hover">
           <div class="flex items-center mb-3">
               <span class="text-sm text-gray-500">{{ post.date | date: date_format }}</span>
@@ -38,7 +39,7 @@ title: 博文列表
               <span class="text-sm text-gray-400"><i class="fas fa-eye mr-1"></i> {{ post.views }}</span>
           </div>
       </article>
-      
+      {%- endif -%}
       {%- endfor -%}
       </div>
 

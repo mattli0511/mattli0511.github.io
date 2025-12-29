@@ -3,7 +3,9 @@ layout: post
 title:  "原来RSS的日期也能造假……"
 date:   2024-10-04 18:46:37 +0800
 author: Matt Li
-categories: chat
+categories: 
+- chat
+- note
 tag: RSS
 ---
 如果你有订阅我的博客的RSS，你不难发现，最早的一篇推文竟然排到了**2006年5月11日**。不知道你会不会感觉有些奇怪，这个博客这么早就开了吗？为什么从2006年到2024年竟然一篇博文都没有？

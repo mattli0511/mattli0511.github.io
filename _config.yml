@@ -32,6 +32,7 @@ lang: zh-CN
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-asciidoc
 #  - jekyll-remote-theme # add this line to the plugins list if you already have one
 
 # Exclude from processing.

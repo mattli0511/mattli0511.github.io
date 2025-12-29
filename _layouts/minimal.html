@@ -8,7 +8,6 @@
     {% seo %}
     <!-- icon -->
     <link rel="icon" href="lgg.png" type="image/png">
-    <script src="/default_files/3.3.3"></script>
     <link rel="stylesheet" href="/default_files/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -947,32 +946,34 @@
     </footer>
 
     <script>
-        // 平滑滚动
+        // 移动端导航菜单切换
         document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            // 平滑滚动
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                    
                     // 点击导航链接后关闭移动端菜单
-                    const mobileMenu = document.getElementById('mobileMenu');
                     if (mobileMenu.classList.contains('active')) {
                         mobileMenu.classList.remove('active');
                         // 同时切换图标回汉堡按钮
-                        const menuIcon = document.querySelector('#mobileMenuButton i');
+                        const menuIcon = menuButton.querySelector('i');
                         menuIcon.classList.remove('fa-times');
                         menuIcon.classList.add('fa-bars');
                     }
                 });
             });
-            
-
-            // 移动端导航菜单切换
-            const menuButton = document.getElementById('mobileMenuButton');
-            const mobileMenu = document.getElementById('mobileMenu');
 
             menuButton.addEventListener('click', function () {
                 mobileMenu.classList.toggle('active');
@@ -989,19 +990,18 @@
             });
 
             // 点击页面其他区域关闭移动端菜单
-        document.addEventListener('click', function (event) {
-            const isClickInsideNav = document.getElementById('mainNav').contains(event.target);
+            document.addEventListener('click', function (event) {
+                const isClickInsideNav = document.getElementById('mainNav').contains(event.target);
 
-            if (!isClickInsideNav && mobileMenu.classList.contains('active')) {
-                mobileMenu.classList.remove('active');
-                const icon = menuButton.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
+                if (!isClickInsideNav && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    const icon = menuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
 
-        // 脚注跳转功能
-        document.addEventListener('DOMContentLoaded', function() {
+            // 脚注跳转功能
             // 为脚注引用添加点击事件
             document.querySelectorAll('sup a').forEach(footnoteRef => {
                 footnoteRef.addEventListener('click', function(e) {
