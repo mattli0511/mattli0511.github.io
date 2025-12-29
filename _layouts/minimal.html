@@ -951,8 +951,8 @@
             const menuButton = document.getElementById('mobileMenuButton');
             const mobileMenu = document.getElementById('mobileMenu');
             
-            // 平滑滚动
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            // 平滑滚动 - 排除脚注链接
+            document.querySelectorAll('a[href^="#"]:not(.footnote):not(.reversefootnote)').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     
@@ -1001,41 +1001,34 @@
                 }
             });
 
-            // 脚注跳转功能
-            // 为脚注引用添加点击事件
-            document.querySelectorAll('sup a').forEach(footnoteRef => {
-                footnoteRef.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetFootnote = document.querySelector(targetId);
-                    if (targetFootnote) {
-                        targetFootnote.scrollIntoView({ behavior: 'smooth' });
-                        // 给目标脚注添加高亮效果
-                        targetFootnote.classList.add('bg-blue-50');
-                        setTimeout(() => {
-                            targetFootnote.classList.remove('bg-blue-50');
-                        }, 2000);
-                    }
-                });
-            });
-
-            // 为脚注定义添加点击事件，返回引用位置
-            document.querySelectorAll('div.footnotes ol li').forEach(footnote => {
-                const backLink = footnote.querySelector('a[href^="#fnref"]');
-                if (backLink) {
-                    backLink.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const targetId = this.getAttribute('href');
-                        const targetRef = document.querySelector(targetId);
-                        if (targetRef) {
-                            targetRef.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    });
-                }
-            });
+            // 脚注跳转使用浏览器默认行为
         });
     </script>
     <style>
+        /* 确保脚注目标元素可见 */
+        .footnotes {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .footnotes ol li {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            background-color: #f9fafb;
+            border-radius: 0.5rem;
+        }
+        
+        /* 确保脚注链接可以点击 */
+        sup a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        
+        sup a:hover {
+            text-decoration: underline;
+        }
+
         h1 {
             font-size: 24px;
             font-weight: bold;
